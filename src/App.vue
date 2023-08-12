@@ -1,9 +1,13 @@
 <template>
-  <div class="py-4 px-20">
+<div>
+<particles-background class="">
+  <div class="py-4 px-20">  
     <nav>
       <the-header></the-header>
       
     </nav>
+  </div>
+  </particles-background>
   </div>
 </template>
 
@@ -21,10 +25,14 @@
 
 <script>
 import TheHeader from './components/TheHeader.vue';
+import ParticlesBackground from './components/ParticlesBackground.vue'
+// import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   components : {
-    TheHeader
+    TheHeader,
+    ParticlesBackground,
+    // HelloWorld
   }
 }
 </script>

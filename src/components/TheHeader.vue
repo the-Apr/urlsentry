@@ -2,7 +2,7 @@
   <header class="flex items-center justify-between px-4 py-2">
   
     <div class="flex items-center space-x-4">
-      <a href="#"><img src="your-logo.png" alt="Logo" class="h-8 w-8"></a>
+      <a href="#"><img src=# alt="Logo" class="h-8 w-8"></a>
       <h2>urlsentry</h2>
     </div>
 

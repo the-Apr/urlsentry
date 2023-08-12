@@ -13,7 +13,7 @@ module.exports = {
       },
     },
     container: {
-      padding: '3rem',
+      // padding: '3rem',
     },
   },
 

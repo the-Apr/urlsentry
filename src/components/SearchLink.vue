@@ -1,7 +1,7 @@
 <template>
-  <div class="search" @submit="submitData.prevent">
+  <div class="search">
     <input type="text" name="searchLink" id="searchLink" placeholder="input the url" ref="searchInput">
-    <button type="submit">Go</button>
+    <button type="submit" @click= "submitData">Go</button>
   </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
       this.inputisInvalid = true;
       return;
     }
-
+    console.log(enteredSearch)
+    console.log(this.$refs.searchInput.value)
     this.$refs.searchInput.value = '';
   }
  }
@@ -50,7 +51,7 @@ export default {
   flex: 1;
   padding: 12px 25px;
   border: none;
-  border-radius: 20px;
+  border-radius: 27px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #000
 }
@@ -61,7 +62,7 @@ export default {
   color: #fff;
   cursor: pointer;
   padding: 12px 20px;
-  border-radius: 20px;
+  border-radius: 27px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 0;

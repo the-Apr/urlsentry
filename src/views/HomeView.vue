@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <section class="grid grid-cols-6 gap-y-12 gap-x-8 items-center mt-40 justify-items-center mb-8">
-      <div class="col-span-6">
-        <h1 class=" dispOne mb-2">One click away from spotting that phishing link</h1>
-        <h1 class="text-2xl tracking-widest leading-normal">Stay safeguarded from scammers!</h1>
+    <section class="grid grid-cols-6 gap-y-12 gap-x-8 items-center mt-8 justify-items-center mb-16 lg:mb-32">
+      <div class="lg:col-span-2 col-span-6 lg:flex lg:flex-col-reverse">
+        <img src="../assets/shouldI.png" alt="a man in dilemma" class="w-9/12 lg:w-full h-auto mx-auto">
+      </div>
+      <div class="lg:col-span-4 col-span-6">
+        <h1 class="font-bold text-lg md:text-5xl tracking-wide leading-normal">Doubting that Link?</h1>
+        <h1 class="text-base md:text-2xl tracking-widest leading-normal">Might be a phishing link.</h1>
       </div>
       <search-link class="col-span-6 lg:col-start-2 lg:col-span-4"></search-link>
-      <div class="col-span-2 ">
-        <img src="../assets/shouldI.png" alt="a man in dilemma" class="max-w-full max-h-full transform scale-100">
-      </div>
-      <div class="col-span-4">
-        <h1 class="font-bold text-5xl tracking-wide leading-normal">Doubting that Link?</h1>
-        <h1 class="font- text-2xl tracking-widest leading-normal">Might be a phishing link.</h1>
+      <div class="col-span-6">
+        <h1 class=" dispOne mb-2">One click away from spotting that phishing link</h1>
+        <h1 class="dispTwo">Stay safeguarded from scammers!</h1>
       </div>
       
     </section>
@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
   .dispOne{
-    @apply tracking-wider leading-normal
+    @apply tracking-wider leading-normal font-bold text-lg
   }
 
   @screen md{
@@ -49,6 +49,16 @@ export default {
   @screen lg{
     .dispOne {
       @apply font-bold text-4xl
+    }
+  }
+
+  .dispTwo{
+    @apply text-base tracking-widest leading-normal
+  }
+
+  @screen md{
+    .dispTwo {
+      @apply text-2xl
     }
   }
 </style>

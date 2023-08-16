@@ -25,7 +25,12 @@
 
 @screen lg{
   .screen-size{
-    @apply py-6 px-20
+    @apply py-6 px-16
+  }
+}
+@screen xl{
+  .screen-size{
+    @apply py-6 px-60
   }
 }
 </style>

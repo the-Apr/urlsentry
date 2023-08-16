@@ -1,4 +1,7 @@
 <template>
+  <div class="mb-8">
+    <h1 class="md:text-2xl text-xl font-bold lg:text-4xl">Frequently Asked Question</h1>
+  </div>
   <ul>
     <faq-item v-for="faqDoc in faqDocs" :key="faqDoc.id"
     :id="faqDoc.id"

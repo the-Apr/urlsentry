@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'main-blue': '#366bd3'
+        'main-blue': '#366bd3',
+        'bkup-blue': '#5c8de0'
       },
     },
     container: {

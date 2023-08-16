@@ -1,13 +1,12 @@
 <template>
 <div>
-<particles-background class="">
-  <div class="py-4 px-20">  
+  <div class="screen-size">  
     <nav>
       <the-header></the-header>
       
     </nav>
   </div>
-  </particles-background>
+  
   </div>
 </template>
 
@@ -20,19 +19,24 @@
   color: #fff;
   /* background-color: #e4e4e4; */
 }
+.screen-size{
+  @apply px-6 py-6
+}
 
+@screen lg{
+  .screen-size{
+    @apply py-6 px-20
+  }
+}
 </style>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
-import ParticlesBackground from './components/ParticlesBackground.vue'
 // import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   components : {
     TheHeader,
-    ParticlesBackground,
-    // HelloWorld
   }
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
 <div>
+  
   <div class="screen-size">  
     <nav>
       <the-header></the-header>

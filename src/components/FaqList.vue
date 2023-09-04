@@ -7,7 +7,7 @@
     :id="faqDoc.id"
     :title="faqDoc.title"
     :graphs="faqDoc.graphs"
-    @closeOtherDropdowns="closeOtherDropdowns">
+    >
     </faq-item>
   </ul>
 </template>
@@ -27,14 +27,14 @@ export default {
   },
   
   methods: {
-    closeOtherDropdowns(currentId) {
-      // Iterate through items and close other dropdowns
-      this.faqDocs.forEach(faqDoc => {
-        if (faqDoc.id !== currentId) {
-          faqDoc.isDropdownOpen = false;
-        }
-      });
-    },
+    // closeOtherDropdowns(currentId) {
+    //   // Iterate through items and close other dropdowns
+    //   this.faqDocs.forEach(faqDoc => {
+    //     if (faqDoc.id !== currentId) {
+    //       faqDoc.isDropdownOpen = false;
+    //     }
+    //   });
+    // },
   }
 }
 </script>

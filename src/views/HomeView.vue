@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <section class="grid grid-cols-6 gap-y-12 gap-x-8 items-center mt-8 justify-items-center mb-16 lg:mb-32">
+    <section class="grid grid-cols-6 gap-y-8 md:gap-y-12 gap-x-8 items-center mt-8 justify-items-center mb-16 lg:mb-32">
       <div class="lg:col-span-2 col-span-6 lg:flex lg:flex-col-reverse">
         <img src="../assets/shouldI.png" alt="a man in dilemma" class="w-9/12 lg:w-full h-auto mx-auto">
       </div>

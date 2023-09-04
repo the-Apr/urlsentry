@@ -4,7 +4,9 @@
     </vue-particle>
 
     <div id="demo">
-      <slot></slot>
+      <slot>
+
+      </slot>
     </div>
   </div>
 </template>
@@ -87,7 +89,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #demo {
-  position: relative;
+  position: relativ;
   z-index: 1;
 }
 

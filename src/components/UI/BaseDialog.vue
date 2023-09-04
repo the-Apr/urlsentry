@@ -1,77 +1,127 @@
 <template>
-  <!-- <teleport> -->
-    <div @click="$emit('close')">
-      
-    </div>
-      <dialog open>
-        <header>
-          <slot name="header">
-            <h2 class="text-xl font-medium"> {{title}}</h2>
-          </slot>
-        </header>
-
-        <section>
-          <slot></slot>
-        </section>
-        <menu>
-          <slot name="actions">
-          </slot>
-        </menu>
-      </dialog>
-  <!-- </teleport> -->
+  <teleport to="body">
+    <div v-if="show" @click="tryClose" class="backdrop"></div>
+    <transition name="dialog">
+    <dialog open v-if="show">
+      <header>
+        <slot name="header">
+          <h2>{{ title }}</h2>
+        </slot>
+      </header>
+      <section>
+        <slot></slot>
+      </section>
+      <menu v-if="!fixed">
+        <slot name="actions">
+          <base-button @click="tryClose">Close</base-button>
+        </slot>
+      </menu>
+    </dialog>
+  </transition>
+  </teleport>
 </template>
 
 <script>
 export default {
-  emits: ['close'],
   props: {
-    title :{
+    show: {
+      type: Boolean,
+      required: true,
+    },
+    title: {
       type: String,
-      required: false
-    }
-  }
-}
+      required: false,
+    },
+    fixed: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
+  emits: ['close'],
+  methods: {
+    tryClose() {
+      if (this.fixed) {
+        return;
+      }
+      this.$emit('close');
+    },
+  },
+};
 </script>
 
 <style scoped>
-div {
-  @apply fixed top-0 left-0 w-full z-10;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
 }
 
-
-dialog{ 
-  @apply fixed border-none p-0 m-0 rounded-xl overflow-hidden;
-  top: 30vh;
-  left: 50%;  
-  width: 90%;
-  transform: translateX(-50%);
+dialog {
+  position: fixed;
+  top: 20vh;
+  left: 10%;
+  width: 80%;
   z-index: 100;
+  border-radius: 12px;
+  border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: white;
 }
 
-@screen md{
-  dialog{  
-    width: 70%;
-  }
-}
-
-header{
-  @apply text-white p-4 w-full;
+header {
   background-color: #3a0061;
+  color: white;
+  width: 100%;
+  padding: 1rem;
 }
 
-header h2{
+header h2 {
   margin: 0;
 }
 
-section{
-  @apply p-4
+section {
+  padding: 1rem;
 }
 
-menu{
-  @apply p-4 flex justify-end m-0
+menu {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
 }
 
+.dialog-enter-from,
+.dialog-leave-to{
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.dialog-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.dialog-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+.dialog-enter-to,
+.dialog-leave-from{
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (min-width: 768px) {
+  dialog {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
 </style>

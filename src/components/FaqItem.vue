@@ -1,15 +1,15 @@
 <template>
   <li class="grid grid-cols-12">
-    <div class="grid  col-span-12 grid-cols-12 border-t-2 items-center p-4 transition-all hover:bg-main-blue" 
+    <div class="grid  col-span-12 grid-cols-12 border-t md:border-t-2 items-center p-4 transition-all hover:bg-main-blue" 
     :class="{ 'bg-bkup-blue': isActive }">
-      <div class="col-span-2 grid justify-items-start">
+      <div class="col-span-1 grid justify-items-start">
         <router-link :to="faqLink"> 
           <fa icon="sort-desc" 
           :class="{ 'transition duration-700 transform rotate-180': isActive, 'rotate-0': !isActive }" 
           @click="toggleDropdown"/>
         </router-link>
       </div>
-      <div class="col-span-10 grid justify-items-start">
+      <div class=" col-start-2 col-span-10 grid justify-items-start">
         <h1 class="font-bold text-sm md:text-xl text-left">{{title}}</h1>
       </div>
     </div>

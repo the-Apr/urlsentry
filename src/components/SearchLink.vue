@@ -1,29 +1,37 @@
 <template>
-  <div class="search">
+
+<!-- <base-dialog :show="inputisInvalid" title="An error occured!" @close="handleError"></base-dialog> -->
+
+  <div class="search my-4">
     <input type="text" name="searchLink" id="searchLink" placeholder="input the url" ref="searchInput"
-    class="py-2 px-8 md:py-6 md:px-12">
-    <button type="submit" @click= "submitData" class="py-2 px-4 md:py-6 md:px-12">Verify</button>
+    class="py-2 px-8 md:py-4 md:px-12">
+    <button type="submit" @click= "submitData" class="py-2 px-4 md:py-4 md:px-8">Verify</button>
   </div>
+  
 </template>
 
 <script>
 export default {
  data(){
   return{
-    inputisInvalid :false
+    inputisInvalid :false,
+    error: false
   }
  },
  methods: {
   submitData(){
     const enteredSearch = this.$refs.searchInput.value;
 
-    if(enteredSearch.trim === ''){
+    if(enteredSearch.trim() === ''){
       this.inputisInvalid = true;
+      console.log('no input')
       return;
     }
-    console.log(enteredSearch)
-    console.log(this.$refs.searchInput.value)
     this.$refs.searchInput.value = '';
+  },
+
+  handleError(){
+    this.inputisInvalid= false;
   }
  }
 }

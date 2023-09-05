@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       colors: {
         'main-blue': '#366bd3',
-        'bkup-blue': '#5c8de0'
+        'bkup-blue': '#5c8de0',
+        'sppt-blue': '#84b4f3',
       },
     },
     container: {

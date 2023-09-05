@@ -1,6 +1,6 @@
 <template>
+<hello-world>
 <div>
-  
   <div class="screen-size">  
     <nav>
       <the-header></the-header>
@@ -9,6 +9,7 @@
   </div>
   
   </div>
+  </hello-world>
 </template>
 
 <style>
@@ -18,7 +19,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fff;
-  /* background-color: #e4e4e4; */
+ 
+  
 }
 .screen-size{
   @apply px-6 py-6

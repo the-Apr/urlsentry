@@ -4,13 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import router from './router'
 import store from './store'
 import './assets/tailwind.css'
+
+
 import VueParticle from 'vue-particlejs';
-import ParticlesBackground from './components/ParticlesBackground.vue';
-// import { ChevronDownIcon, ArrowCircleDownIcon } from '@vue-hero-icons/outline';
+const ParticlesBackground = defineAsyncComponent(() => import('./components/ParticlesBackground.vue'))
+
+import HelloWorld from './components/HelloWorld.vue'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {fas} from '@fortawesome/free-solid-svg-icons'
 const BaseDialog = defineAsyncComponent(() => import('./components/UI/BaseDialog.vue'))
-import BaseButton from './components/UI/BaseButton.vue'
+const BaseButton = defineAsyncComponent(() => import('./components/UI/BaseButton.vue'))
+
 
 library.add(fas);
 
@@ -26,5 +30,6 @@ app.component('particles-background', ParticlesBackground)
 app.component('fa', FontAwesomeIcon)
 app.component('base-dialog', BaseDialog)
 app.component('base-button', BaseButton)
+app.component('hello-world', HelloWorld)
 
 app.mount('#app')

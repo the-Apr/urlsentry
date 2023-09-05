@@ -1,6 +1,6 @@
 <template>
   <li class="grid grid-cols-12">
-    <div class="grid  col-span-12 grid-cols-12 border-t md:border-t-2 items-center p-4 transition-all hover:bg-main-blue" 
+    <div class="grid  col-span-12 grid-cols-12 border-t md:border-t-2 items-center p-4 transition-all hover:bg-bkup-blue" 
     :class="{ 'bg-bkup-blue': isActive }">
       <div class="col-span-1 grid justify-items-start">
         <router-link :to="faqLink"> 

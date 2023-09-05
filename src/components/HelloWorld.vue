@@ -2,7 +2,8 @@
   <div class="hello">
     <div id="demo">
       <div id="inner-demo">
-        <h1>Hi There</h1>
+        
+        <slot></slot>
       </div>
     </div>
     <vue-particle domId="demo" :config="particleConfig"/>
@@ -84,24 +85,18 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 #demo {
   width: 100%;
-  height: 50vh;
-  background: blue;
+  height: 200vh;
+  background: #366bd3;
+  /* background-color: #84b4f3; */
+ 
 }
 #inner-demo {
   width: 100%;
   height: 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2em;
 }
-#inner-demo h1 {
-  position: relative;
-  top: 4em;
-}
+
 </style>
